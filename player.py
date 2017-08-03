@@ -1,14 +1,17 @@
 class Player(object):
     def __init__ (self, playerNo):
         self.name = "Player {}".format(playerNo)
-        self.cards = {}
+        self.cards = {} 
 
     def play (self):
         print "\n---------\nYour hand contains:"
         listHand = []
         for key in self.cards:
+            print key
             suit = self.cards[key].suit
+            print suit
             value = self.cards[key].value
+            print value
             listHand.append[self.cards[key]]
             print "{}) {} of {}".format(len(listHand), value, suit)
         which = input("\nWhich value do you want to check for?")
