@@ -8,7 +8,7 @@ class Deck(object):
         self.shuffle()
 
     def __repr__(self):
-        for card in self.cards
+        for card in self.cards:
             print card
 
     def build(self):
