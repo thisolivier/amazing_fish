@@ -7,16 +7,15 @@ class Player(object):
         print "\n---------\nYour hand contains:"
         listHand = []
         for key in self.cards:
-            print key
             suit = self.cards[key].suit
-            print suit
             value = self.cards[key].value
-            print value
-            listHand.append[self.cards[key]]
+            listHand.append(self.cards[key])
             print "{}) {} of {}".format(len(listHand), value, suit)
         which = input("\nWhich value do you want to check for?")
         whichPlayer = input("\nWhich player are you asking?")
-        return [self.cards[listHand[which]].value, whichPlayer]
+        requestVal = self.cards[listHand[which]].value
+        returnVal = [requestVal, whichPlayer]
+        return returnVal
     
     def draw (self, card):
         keyName = str(card.value) + str(card.suit)

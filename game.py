@@ -10,8 +10,9 @@ class Game(object):
         self.players=[]
         self.player_create()
         self.deck=Deck()
-        self.first_turn()
         self.deal()
+        self.first_turn()
+        
     # def Ask(self,player,ask):
     #     temp=[]
     #     for card in player.hand:
