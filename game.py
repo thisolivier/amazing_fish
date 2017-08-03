@@ -35,12 +35,13 @@ class Game(object):
     def first_turn(self):
         x=randint(0,self.playersNum-1)
         print x
-        vall=self.players[x].play()
+        returnValues=self.players[x].play()
         temp=[]
-        for card in vall[1].hand:
-            if card.value == vall[0]:
-                del card.value
+        for card in self.players(returnValues[1]).hand:
+            print card
+            if card.value == returnValues[0]:
                 temp.append(card)
+                del self.players(returnValues[1]).hand[card]
             if len(temp)!=0:
                 self.players[x].hand.append(temp)
         return self
