@@ -7,6 +7,10 @@ class Deck(object):
         self.build()
         self.shuffle()
 
+    def __repr__(self):
+        for card in self.cards
+            print card
+
     def build(self):
         cards_in_suit=(self.size/len(self.suits))
         
