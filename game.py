@@ -21,29 +21,34 @@ class Game(object):
     #             temp.append(card)
     #         if len(temp)!=0:
     #             player.hand.append(temp)
+
     def deal(self,deal=7):
         for i in range(0,deal):
             for x in range(0,self.playersNum):
                 cardDraw=self.deck.cards.pop()
                 self.players[x].draw(cardDraw)
         return self
+
     def player_create(self):
         for i in range(1,self.playersNum+1):
             self.players.append(Player(i))
         print self.players
         return self
+
     def first_turn(self):
-        x=randint(0,self.playersNum-1)
-        print x
-        returnValues=self.players[x].play()
-        temp=[]
-        for card in self.players(returnValues[1]).hand:
-            print card
-            if card.value == returnValues[0]:
-                temp.append(card)
-                del self.players(returnValues[1]).hand[card]
-            if len(temp)!=0:
-                self.players[x].hand.append(temp)
+        randPlayer = self.players[randint(0,self.playersNum-1)]
+        tempCards = []
+        returnValues = randPlayer.play()
+        enemy = self.players[returnValues[1]]
+
+        for cardKey in enemy.cards:
+            if enemy.cards[cardKey].value == returnValues[0]:
+                print "Hey!"
+            else:
+                print "Noo..."
+            
+        
+
         return self
 
 if __name__ == "__main__":

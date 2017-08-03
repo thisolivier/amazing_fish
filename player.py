@@ -4,14 +4,14 @@ class Player(object):
         self.cards = {} 
 
     def play (self):
-        print "\n---------\nYour hand contains:"
+        print "\n---------\nYou are {}, your hand contains:".format(self.name)
         listHand = []
         for key in self.cards:
             suit = self.cards[key].suit
             value = self.cards[key].value
             listHand.append(key)
             print "{}) {} of {}".format(len(listHand), value, suit)
-        which = input("\nWhich value do you want to check for?")
+        which = input("\nWhich value do you want to check for?") -1
         whichPlayer = input("\nWhich player are you asking?")
         requestVal = self.cards[listHand[which]].value
         returnVal = [requestVal, whichPlayer]
