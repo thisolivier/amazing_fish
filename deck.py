@@ -17,13 +17,14 @@ class Deck(object):
         for x in range(0,len(self.suits)):
             for i in range(1,cards_in_suit+1):
                 self.cards.append(Card(i,self.suits[x]))
-            print "build is working!"
+        
         return self
 
     def shuffle(self):
         shuffle(self.cards)
         print "shuffle is working!"
         return self 
+    
         
 class Card(object):
     def __init__(self,value,suit):
