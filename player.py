@@ -1,7 +1,7 @@
 class Player(object):
     def __init__ (self, playerNo):
         self.name = "Player {}".format(playerNo)
-        self.cards = {}
+        self.cards = {} 
 
     def play (self):
         print "\n---------\nYour hand contains:"
