@@ -33,7 +33,8 @@ class Game(object):
         print self.players
         return self
     def first_turn(self):
-        x=randint(0,self.playersNum)
+        x=randint(0,self.playersNum-1)
+        print x
         vall=self.players[x].play()
         temp=[]
         for card in vall[1].hand:
