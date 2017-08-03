@@ -9,7 +9,7 @@ class Player(object):
         for key in self.cards:
             suit = self.cards[key].suit
             value = self.cards[key].value
-            listHand.append(self.cards[key])
+            listHand.append(key)
             print "{}) {} of {}".format(len(listHand), value, suit)
         which = input("\nWhich value do you want to check for?")
         whichPlayer = input("\nWhich player are you asking?")
