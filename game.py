@@ -10,7 +10,7 @@ class Game(object):
         self.players=[]
         self.player_create()
         self.deck=Deck()
-        # self.first_turn()
+        self.first_turn()
         self.deal()
     # def Ask(self,player,ask):
     #     temp=[]
@@ -22,10 +22,10 @@ class Game(object):
     #             player.hand.append(temp)
     def deal(self,deal=7):
         for i in range(0,deal):
-            for x in range(0,len(self.playersNum)):
-                cardDraw=self.deck().card[len(self.deck.card)]
-                print cardDraw
-                # Player.draw()
+            for x in range(0,self.playersNum):
+                cardDraw=self.deck.cards.pop()
+                self.players[x].draw(cardDraw)
+        return self
     def player_create(self):
         for i in range(1,self.playersNum+1):
             self.players.append(Player(i))
@@ -34,7 +34,17 @@ class Game(object):
     def first_turn(self):
         x=randint(0,self.playersNum)
         vall=self.players[x].play()
+        temp=[]
+        for card in vall[1].hand:
+            if card.value == vall[0]:
+                del card.value
+                temp.append(card)
+            if len(temp)!=0:
+                self.players[x].hand.append(temp)
         return self
 
-test=Game(4)
-test
+if __name__ == "__main__":
+
+    test=Game(4)
+
+
