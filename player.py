@@ -19,6 +19,8 @@ class Player(object):
     
     def draw (self, card):
         keyName = str(card.value) + str(card.suit)
+        print "Adding card, keyname ",keyName
+        print "The card is ",card
         self.cards[keyName] = card
         return self
 
